@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class Jugador {
+public class Jugador extends Trayectoria{
     String nombre;
     String apellidos;
     double notaMedia;
