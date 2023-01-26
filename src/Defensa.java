@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Defensa extends Jugador{
 
     private int regates_Rec;
@@ -15,5 +17,12 @@ public class Defensa extends Jugador{
         this.regates_Rec= regates_Rec;
         this.intercepciones = intercepciones;
         this.robos = robos;
+    }
+
+    public Defensa(Scanner scanner){
+        super(scanner);
+        this.regates_Rec = Integer.parseInt(scanner.next());
+        this.intercepciones = Integer.parseInt(scanner.next());
+        this.robos = Integer.parseInt(scanner.next());
     }
 }

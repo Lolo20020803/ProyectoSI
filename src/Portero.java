@@ -1,8 +1,11 @@
+import javax.sound.sampled.Port;
+import java.util.Scanner;
+
 public class Portero extends Jugador{
-    int paradas;
-    int golesEncajados;
-    int penaltisParados;
-    int penaltisEncajados;
+    private int paradas;
+    private int golesEncajados;
+    private int penaltisParados;
+    private int penaltisEncajados;
 
     public Portero(){
 
@@ -14,6 +17,14 @@ public class Portero extends Jugador{
         this.golesEncajados = golesEncajados;
         this.penaltisParados = penaltisParados;
         this.penaltisEncajados = penaltisEncajados;
+    }
+
+    public Portero(Scanner scanner){
+        super(scanner);
+        this.paradas = Integer.parseInt(scanner.next());
+        this.golesEncajados = Integer.parseInt(scanner.next());
+        this.penaltisParados =Integer.parseInt(scanner.next());
+        this.penaltisEncajados = Integer.parseInt(scanner.next());
     }
 
 }
