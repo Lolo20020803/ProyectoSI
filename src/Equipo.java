@@ -25,11 +25,15 @@ public class Equipo {
                     case "Delantero": Delantero provisionalDel = new Delantero(sc); plantilla.add(provisionalDel);break;
                     case "Entrenador": Entrenador provisionalEntr = new Entrenador(); this.entrenador = provisionalEntr;break;
                 }
-
             }
         }catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
 
+    }
+    public void mostrar(){
+        for(Jugador jugador : plantilla){
+            jugador.mostrar();
+        }
     }
 }

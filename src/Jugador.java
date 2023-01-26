@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.Scanner;
 
-public class Jugador extends Trayectoria{
+public abstract class Jugador extends Trayectoria{
     String nombre;
     String apellidos;
     double notaMedia;
@@ -31,6 +31,9 @@ public class Jugador extends Trayectoria{
         this.minutosJugadosMedios = Float.parseFloat(scanner.next());
         this.porcentajePasesPrecisos = Float.parseFloat(scanner.next());
     }
-
-
+    @Override
+    public String toString(){
+        return nombre + " " + apellidos + " Nota media: " + notaMedia + " Minutos jugados " + minutosJugadosMedios + " Porcentaje pases: " + porcentajePasesPrecisos;
+    }
+    public abstract void mostrar();
 }
