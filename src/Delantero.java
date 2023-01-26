@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Delantero extends Jugador{
 
     int golesMarcados;
@@ -21,5 +23,14 @@ public class Delantero extends Jugador{
         this.penaltisMarcados = penaltisMarcados;
         this.tirosAPuerta = tirosAPuerta;
         this.tirosTotales = tirosTotales;
+    }
+    public  Delantero(Scanner scanner){
+        super(scanner);
+        this.golesMarcados = Integer.parseInt(scanner.next());
+        this.penaltisTirados = Integer.parseInt(scanner.next());
+        this.penaltisMarcados = Integer.parseInt(scanner.next());
+        this.tirosAPuerta = Integer.parseInt(scanner.next());
+        this.tirosTotales = Double.parseDouble(scanner.next());
+
     }
 }
