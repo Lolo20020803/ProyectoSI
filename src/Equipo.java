@@ -21,6 +21,7 @@ public class Equipo {
                 switch (sc.next()){
                     case "Portero": Portero provisionalPort = new Portero(); plantilla.add(provisionalPort);break;
                     case "Defensa": Defensa provisionalDef = new Defensa(); plantilla.add(provisionalDef);break;
+                    case "Mediocentro": Mediocentro provisionalMed = new Mediocentro(); plantilla.add(provisionalMed);break;
                     case "Delantero": Delantero provisionalDel = new Delantero(); plantilla.add(provisionalDel);break;
                     case "Entrenador": Entrenador provisionalEntr = new Entrenador(); this.entrenador = provisionalEntr;break;
                 }
