@@ -40,6 +40,21 @@ public class Delantero extends Jugador{
 
     @Override
     public void calcularNotaMedia() {
-
+        double puntuacion;
+        double penaltisFallados;
+        double tirosFallados;
+        if(!super.titular){
+            puntuacion = 25;
+        }
+        else{
+            puntuacion = 35;
+        }
+        penaltisFallados = penaltisTirados - penaltisMarcados;
+        tirosFallados = tirosTotales - tirosAPuerta;
+        puntuacion+=(penaltisFallados*(-5)+(tirosAPuerta*3) + (tirosFallados*(-1))+(golesMarcados*5));
+        if(puntuacion>=100){
+            puntuacion = 100;
+        }
+        super.notaMedia = puntuacion/10;
     }
 }

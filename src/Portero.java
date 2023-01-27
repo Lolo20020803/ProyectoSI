@@ -27,6 +27,17 @@ public class Portero extends Jugador{
 
     @Override
     public void calcularNotaMedia() {
-
+        double puntuacion;
+        if(!super.titular){
+            puntuacion = 25;
+        }
+        else{
+            puntuacion = 35;
+        }
+        puntuacion+=(paradas*1)+(golesEncajados*(-2))+(penaltisParados*3)+(penaltisEncajados*(-2));
+        if(puntuacion>=100){
+            puntuacion = 100;
+        }
+        super.notaMedia = puntuacion/10;
     }
 }
