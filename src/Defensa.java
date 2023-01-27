@@ -25,4 +25,9 @@ public class Defensa extends Jugador{
         this.intercepciones = Integer.parseInt(scanner.next());
         this.robos = Integer.parseInt(scanner.next());
     }
+
+    @Override
+    public void mostrar() {
+        System.out.printf(toString() + "Regates Recibidos: "+regates_Rec+" Intercepciones: "+intercepciones+" Robos: "+robos);
+    }
 }

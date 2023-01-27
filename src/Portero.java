@@ -27,4 +27,9 @@ public class Portero extends Jugador{
         this.penaltisEncajados = Integer.parseInt(scanner.next());
     }
 
+    @Override
+    public void mostrar() {
+        System.out.printf(toString() + " Paradas :" +paradas + " Goles Encajados: " +golesEncajados + " Penaltis Parados: " + penaltisParados + " Penaltis Encajados: " + penaltisEncajados);
+    }
+
 }

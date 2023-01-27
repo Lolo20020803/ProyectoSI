@@ -33,4 +33,9 @@ public class Mediocentro extends Jugador{
         this.asistencias = Integer.parseInt(scanner.next());
         this.goles= Integer.parseInt(scanner.next());
     }
+
+    @Override
+    public void mostrar() {
+        System.out.printf(toString() + " Regates Realizados: "+ regatesRealizados+" Regates Con Exito: "+regatesConExito+" Recuperaciones: "+recuperaciones+" Asistencias: "+asistencias+" Goles: "+goles);
+    }
 }
