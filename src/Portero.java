@@ -12,20 +12,13 @@ public class Portero extends Jugador{
     }
 
     public Portero(int tiempoEnClubActual, String nombre, String apellidos, double notaMedia,float minutosJugadosMedios, float procetajePasesPrecisos,int paradas, int golesEncajados, int penaltisParados, int penaltisEncajados){
-        super(tiempoEnClubActual,nombre,apellidos,notaMedia,minutosJugadosMedios,procetajePasesPrecisos);
+        //super(tiempoEnClubActual,nombre,apellidos,notaMedia,minutosJugadosMedios,procetajePasesPrecisos);
         this.paradas = paradas;
         this.golesEncajados = golesEncajados;
         this.penaltisParados = penaltisParados;
         this.penaltisEncajados = penaltisEncajados;
     }
 
-    public Portero(Scanner scanner){
-        super(scanner);
-        this.paradas = Integer.parseInt(scanner.next());
-        this.golesEncajados = Integer.parseInt(scanner.next());
-        this.penaltisParados =Integer.parseInt(scanner.next());
-        this.penaltisEncajados = Integer.parseInt(scanner.next());
-    }
 
     @Override
     public void mostrar() {

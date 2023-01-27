@@ -16,27 +16,6 @@ public class Equipo {
     List<Jugador> plantilla;
     Entrenador entrenador;
 
-    /*
-    public Equipo (String rutaFichero){
-        try{
-            Scanner sc = new Scanner(new File(rutaFichero));
-            sc.useDelimiter(",");
-            plantilla = new ArrayList<Jugador>();
-            while (sc.hasNext()){
-                switch (sc.next()){
-                    case "Portero": Portero provisionalPort = new Portero(); plantilla.add(provisionalPort);break;
-                    case "Defensa": Defensa provisionalDef = new Defensa(); plantilla.add(provisionalDef);break;
-                    case "Mediocentro": Mediocentro provisionalMed = new Mediocentro(); plantilla.add(provisionalMed);break;
-                    case "Delantero": Delantero provisionalDel = new Delantero(sc); plantilla.add(provisionalDel);break;
-                    case "Entrenador": Entrenador provisionalEntr = new Entrenador(); this.entrenador = provisionalEntr;break;
-                }
-            }
-        }catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-
-    }
-    */
     public Equipo (String ruta){
         this.plantilla = new ArrayList<Jugador>();
         try {
@@ -55,11 +34,7 @@ public class Equipo {
             throw new RuntimeException(e);
         }
     }
-    public void replaceSpaces (String[] string){
-        for (String hueco: string) {
-            hueco.replace(" ", "");
-        }
-    }
+
     public void mostrar(){
         for(Jugador jugador : plantilla){
             jugador.mostrar();
