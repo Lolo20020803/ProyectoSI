@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.Scanner;
 
-public abstract class Jugador extends Trayectoria{
+public abstract class Jugador {
     String nombre;
     String apellidos;
     double notaMedia;
@@ -10,26 +10,27 @@ public abstract class Jugador extends Trayectoria{
     // añadirlos de otra forma
     float minutosJugadosMedios;
     float porcentajePasesPrecisos;
+    Trayectoria trayectoria;
 
     public Jugador(){
 
     }
 
-    public Jugador(int tiempoEnClubActual, String nombre, String apellidos, double notaMedia,float minutosJugadosMedios, float porcentajePasesPrecisos){
-        super(tiempoEnClubActual);
+    public Jugador(String nombre, String apellidos, double notaMedia,float minutosJugadosMedios, float porcentajePasesPrecisos){
         this.nombre = nombre;
         this.apellidos= apellidos;
         this.notaMedia = notaMedia;
         this.minutosJugadosMedios = minutosJugadosMedios;
         this.porcentajePasesPrecisos =porcentajePasesPrecisos;
     }
-    public Jugador(Scanner scanner){
-        super(Integer.parseInt(scanner.next()));
-        this.nombre = scanner.next();
-        this.apellidos = scanner.next();
-        this.notaMedia = Integer.parseInt(scanner.next());
-        this.minutosJugadosMedios = Float.parseFloat(scanner.next());
-        this.porcentajePasesPrecisos = Float.parseFloat(scanner.next());
+
+    public Jugador(String[] splitSttring){
+        int x =1;
+        this.nombre = splitSttring[x++];
+        this.apellidos = splitSttring[x++];
+        this.notaMedia = Double.parseDouble(splitSttring[x++]);
+        this.minutosJugadosMedios = Float.parseFloat(splitSttring[x++]);
+        this.porcentajePasesPrecisos = Float.parseFloat(splitSttring[x++]);
     }
     @Override
     public String toString(){
