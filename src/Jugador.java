@@ -36,4 +36,6 @@ public abstract class Jugador extends Trayectoria{
         return nombre + " " + apellidos + " Nota media: " + notaMedia + " Minutos jugados " + minutosJugadosMedios + " Porcentaje pases: " + porcentajePasesPrecisos;
     }
     public abstract void mostrar();
+
+    public abstract void calcularNotaMedia();
 }
