@@ -25,4 +25,8 @@ public class Portero extends Jugador{
         System.out.printf(toString() + " Paradas :" +paradas + " Goles Encajados: " +golesEncajados + " Penaltis Parados: " + penaltisParados + " Penaltis Encajados: " + penaltisEncajados);
     }
 
+    @Override
+    public void calcularNotaMedia() {
+
+    }
 }

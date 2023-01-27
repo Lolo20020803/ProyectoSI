@@ -12,6 +12,8 @@ public abstract class Jugador {
     float porcentajePasesPrecisos;
     Trayectoria trayectoria;
 
+    boolean titular;
+
     public Jugador(){
 
     }

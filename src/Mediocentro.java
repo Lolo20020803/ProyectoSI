@@ -31,4 +31,22 @@ public class Mediocentro extends Jugador{
     public void mostrar() {
         System.out.printf(toString() + " Regates Realizados: "+ regatesRealizados+" Regates Con Exito: "+regatesConExito+" Recuperaciones: "+recuperaciones+" Asistencias: "+asistencias+" Goles: "+goles);
     }
+
+    @Override
+    public void calcularNotaMedia() {
+        double puntuacion;
+        double porcentajeRegates;
+        if(!super.titular){
+            puntuacion = 25;
+        }
+        else{
+            puntuacion = 35;
+        }
+        porcentajeRegates = regatesConExito/regatesRealizados;
+        puntuacion+=(porcentajeRegates*0.3)+(recuperaciones*3)+(asistencias*2)+(goles*5)+(porcentajePasesPrecisos*0.1);
+        if(puntuacion>=100){
+            puntuacion = 100;
+        }
+        super.notaMedia = puntuacion/10;
+    }
 }

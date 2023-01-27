@@ -6,21 +6,38 @@ public class Defensa extends Jugador{
 
     private int intercepciones;
 
-    private int robos;
+    private int faltas;
 
     public Defensa(){
 
     }
 
-    public Defensa(int tiempoEnClubActual, String nombre, String apellidos, double notaMedia,float minutosJugadosMedios, float procetajePasesPrecisos,int regates_Rec, int intercepciones, int robos){
+    public Defensa(int tiempoEnClubActual, String nombre, String apellidos, double notaMedia,float minutosJugadosMedios, float procetajePasesPrecisos,int regates_Rec, int intercepciones, int faltas){
         //super(tiempoEnClubActual,nombre,apellidos,notaMedia,minutosJugadosMedios,procetajePasesPrecisos);
         this.regates_Rec= regates_Rec;
         this.intercepciones = intercepciones;
-        this.robos = robos;
+        this.faltas = faltas;
     }
 
     @Override
     public void mostrar() {
-        System.out.printf(toString() + "Regates Recibidos: "+regates_Rec+" Intercepciones: "+intercepciones+" Robos: "+robos);
+        System.out.printf(toString() + "Regates Recibidos: "+regates_Rec+" Intercepciones: "+intercepciones+" Faltas: "+faltas);
+    }
+
+    @Override
+    public void calcularNotaMedia() {
+        double puntuacion;
+        if(!super.titular){
+            puntuacion = 25;
+        }
+        else{
+            puntuacion = 35;
+        }
+
+        puntuacion+=(regates_Rec*(-0.5))+(intercepciones*3)+(faltas*(-3))+(porcentajePasesPrecisos*0.1);
+        if(puntuacion>=100){
+            puntuacion = 100;
+        }
+        super.notaMedia = puntuacion/10;
     }
 }

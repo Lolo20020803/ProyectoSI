@@ -37,4 +37,9 @@ public class Delantero extends Jugador{
     public void mostrar(){
         System.out.printf(toString() + " Goles Marcados: " +golesMarcados + " Penaltis Marcados: " +penaltisMarcados + " Penaltis Tirados: " +penaltisTirados + " Tiros Totales: " + tirosTotales + " Tiros a puerta: " + tirosAPuerta +" Tiros Totales: " +tirosTotales);
     }
+
+    @Override
+    public void calcularNotaMedia() {
+
+    }
 }
