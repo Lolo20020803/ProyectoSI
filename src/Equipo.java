@@ -16,7 +16,7 @@ public class Equipo {
     List<Jugador> plantilla;
     Entrenador entrenador;
     private int puntos;
-
+    ArrayList<Partido> partidos;
     public Equipo (String ruta){
         this.plantilla = new ArrayList<Jugador>();
         try {
@@ -35,7 +35,6 @@ public class Equipo {
             throw new RuntimeException(e);
         }
     }
-
     public void mostrar(){
         for(Jugador jugador : plantilla){
             jugador.mostrar();
@@ -48,4 +47,29 @@ public class Equipo {
         }
         return res / plantilla.size();
     }
+    //En nuestro proyecto hemos planteado que la opcion de invertir sea que el rival pase de ser local a visitante
+    public void invertir(Equipo rival){
+        int x =0;
+        for (Partido partido : partidos){
+            if(partido.partidoExacto(this,rival)){
+                partidos.set(x,new Partido(rival,this));
+            }
+            x++;
+        }
+    }
+    //En nuestro proyecto hemos pensado que una de las posibilidades de intercambiar el cromosoma fuera que el resultado fuera totalmente modificado y que siempre el equipo local perdiera el encuentro
+    public void intercambiar(Equipo rival){
+        for (Partido partido : partidos){
+            if(partido.partidoExacto(this,rival)){
+                partido.modificar();
+            }
+        }
+    }
+
+    public void simular(){
+        for(Partido partido:partidos){
+            partido.simular();
+        }
+    }
+
 }
