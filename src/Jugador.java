@@ -40,5 +40,5 @@ public abstract class Jugador {
     }
     public abstract void mostrar();
 
-    public abstract void calcularNotaMedia();
+    public abstract double calcularNotaMedia();
 }

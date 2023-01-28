@@ -33,7 +33,7 @@ public class Mediocentro extends Jugador{
     }
 
     @Override
-    public void calcularNotaMedia() {
+    public double calcularNotaMedia() {
         double puntuacion;
         double porcentajeRegates;
         if(!super.titular){
@@ -47,6 +47,6 @@ public class Mediocentro extends Jugador{
         if(puntuacion>=100){
             puntuacion = 100;
         }
-        super.notaMedia = puntuacion/10;
+        return puntuacion/10;
     }
 }

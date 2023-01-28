@@ -40,4 +40,11 @@ public class Equipo {
             jugador.mostrar();
         }
     }
+    public double calcularEquipo(){
+        double res = 0;
+        for(Jugador jugador: plantilla){
+            res += jugador.calcularNotaMedia();
+        }
+        return res / plantilla.size();
+    }
 }

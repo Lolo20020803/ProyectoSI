@@ -26,7 +26,7 @@ public class Portero extends Jugador{
     }
 
     @Override
-    public void calcularNotaMedia() {
+    public double calcularNotaMedia() {
         double puntuacion;
         if(!super.titular){
             puntuacion = 25;
@@ -38,6 +38,6 @@ public class Portero extends Jugador{
         if(puntuacion>=100){
             puntuacion = 100;
         }
-        super.notaMedia = puntuacion/10;
+        return puntuacion/10;
     }
 }

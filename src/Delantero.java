@@ -39,7 +39,7 @@ public class Delantero extends Jugador{
     }
 
     @Override
-    public void calcularNotaMedia() {
+    public double calcularNotaMedia() {
         double puntuacion;
         double penaltisFallados;
         double tirosFallados;
@@ -55,6 +55,6 @@ public class Delantero extends Jugador{
         if(puntuacion>=100){
             puntuacion = 100;
         }
-        super.notaMedia = puntuacion/10;
+        return puntuacion/10;
     }
 }
