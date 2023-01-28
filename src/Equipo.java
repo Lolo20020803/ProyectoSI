@@ -15,6 +15,7 @@ public class Equipo {
     Racha ultimosJugados;
     List<Jugador> plantilla;
     Entrenador entrenador;
+    private int puntos;
 
     public Equipo (String ruta){
         this.plantilla = new ArrayList<Jugador>();

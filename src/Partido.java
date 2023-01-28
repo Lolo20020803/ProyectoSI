@@ -12,5 +12,4 @@ public class Partido {
     public String toString() {
         return "Equipo Local: "+local+"\nEquipo Visitante: "+visitante+"\nClima: "+meteorologia;
     }
-    publiv
 }
