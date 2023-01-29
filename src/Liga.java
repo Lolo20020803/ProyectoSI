@@ -11,11 +11,11 @@ public class Liga {
     public Liga(){
         equipos = new ArrayList<Equipo>();
         ArrayList<Partido> partidos = new ArrayList<Partido>();
-        Equipo equipo1 = new Equipo("Barcelona", "D:\\ProgramoCosas\\ProyectoSI\\ficheros\\Barcelona.csv");
-        Equipo equipo2 = new Equipo( "Getafe","D:\\ProgramoCosas\\ProyectoSI\\ficheros\\Getafe.csv");
-        Equipo equipo3 = new Equipo( "Atletico De Madrid","D:\\ProgramoCosas\\ProyectoSI\\ficheros\\Atletico_de_Madrid.csv");
-        Equipo equipo4 = new Equipo( "Real Madrid","D:\\ProgramoCosas\\ProyectoSI\\ficheros\\Real_Madrid.csv");
-        Equipo equipo5 = new Equipo( "Real Sociedad","D:\\ProgramoCosas\\ProyectoSI\\ficheros\\Real_Sociedad.csv");
+        Equipo equipo1 = new Equipo("Barcelona", "ficheros/Barcelona.csv");
+        Equipo equipo2 = new Equipo( "Getafe","ficheros/Getafe.csv");
+        Equipo equipo3 = new Equipo( "Atletico De Madrid","ficheros/Atletico_de_Madrid.csv");
+        Equipo equipo4 = new Equipo( "Real Madrid","ficheros/Real_Madrid.csv");
+        Equipo equipo5 = new Equipo( "Real Sociedad","ficheros/Real_Sociedad.csv");
         equipos.add(equipo1);
         equipos.add(equipo2);
         equipos.add(equipo3);
