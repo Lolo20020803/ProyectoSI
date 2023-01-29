@@ -41,24 +41,8 @@ public class Liga {
         int generacion = 0;
         Equipo eTemp = null;
         while (generacion <= numGeneraciones){
-           /* for (Equipo equipo1: equipos) {
-                for (Equipo equipo2: equipos) {
-                    if(!equipo1.equals(equipo2)){
-                        if(r.nextFloat(1)<=prob){
-                            equipo1.invertir(equipo2);
-                            System.out.println("Invierte");
-                        }
-                        if(r.nextFloat(1)<=probMut){
-                            System.out.println("Intercambia");
-                            equipo1.intercambiar(equipo2);
-                        }
-                    }
-                }
-                equipo1.simular();
-                mostrarResultados();
-            }
-            */
             for(int x =0;x<equipos.size()-1;x++){
+                System.out.println("-------------------La liga-------------------");
                 Equipo equipo1 = equipos.get(x);
                 Equipo equipo2 = equipos.get(x+1);
                 if(r.nextFloat()<=prob){
