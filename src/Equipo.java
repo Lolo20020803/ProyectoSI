@@ -1,23 +1,21 @@
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Equipo {
     String nombre;
-    List<String> trofeosEquipo;
-    Racha ultimosJugados;
     List<Jugador> plantilla;
     Entrenador entrenador;
-    private int puntos;
+    double notaMedia;
+    int puntos;
     ArrayList<Partido> partidos;
-    public Equipo (String ruta){
+    public Equipo (String nombre,String ruta){
+        this.nombre = nombre;
+        this.partidos = partidos;
         this.plantilla = new ArrayList<Jugador>();
         try {
             CSVReader csvReader = new CSVReader(new FileReader(ruta));
@@ -34,6 +32,9 @@ public class Equipo {
         } catch (CsvValidationException | IOException e) {
             throw new RuntimeException(e);
         }
+    }
+    public void crearPartidos(ArrayList<Partido> partidos){
+        this.partidos = partidos;
     }
     public void mostrar(){
         for(Jugador jugador : plantilla){
