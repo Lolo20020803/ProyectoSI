@@ -5,12 +5,9 @@ public abstract class Jugador {
     String nombre;
     String apellidos;
     double notaMedia;
-    List<String> trofeosIndividuales;
-    //No meto la lista de trofeos en el constructor por si queremos
-    // añadirlos de otra forma
+
     float minutosJugadosMedios;
     float porcentajePasesPrecisos;
-    Trayectoria trayectoria;
 
     boolean titular;
 
@@ -24,6 +21,7 @@ public abstract class Jugador {
         this.notaMedia = notaMedia;
         this.minutosJugadosMedios = minutosJugadosMedios;
         this.porcentajePasesPrecisos =porcentajePasesPrecisos;
+
     }
 
     public Jugador(String[] splitSttring){
@@ -33,6 +31,11 @@ public abstract class Jugador {
         this.notaMedia = Double.parseDouble(splitSttring[x++]);
         this.minutosJugadosMedios = Float.parseFloat(splitSttring[x++]);
         this.porcentajePasesPrecisos = Float.parseFloat(splitSttring[x++]);
+        if(splitSttring[x++].equals("Si")){
+            titular = true;
+        }else if(splitSttring[x++].equals("No")){
+            titular = false;
+        }
     }
     @Override
     public String toString(){

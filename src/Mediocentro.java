@@ -24,6 +24,15 @@ public class Mediocentro extends Jugador{
         this.asistencias=asistencias;
         this.goles=goles;
     }
+    public Mediocentro(String[] splitString){
+        super(splitString);
+        int x = 7;
+        this.regatesRealizados = Integer.parseInt(splitString[x++]);;
+        this.regatesConExito = Integer.parseInt(splitString[x++]);;
+        this.recuperaciones= Integer.parseInt(splitString[x++]);;
+        this.asistencias= Integer.parseInt(splitString[x++]);;
+        this.goles= Integer.parseInt(splitString[x++]);;
+    }
 
 
 

@@ -18,7 +18,14 @@ public class Portero extends Jugador{
         this.penaltisParados = penaltisParados;
         this.penaltisEncajados = penaltisEncajados;
     }
-
+    public Portero (String[] splitString){
+        super(splitString);
+        int x =7;
+        this.paradas = Integer.parseInt(splitString[x++]);;
+        this.golesEncajados = Integer.parseInt(splitString[x++]);
+        this.penaltisParados=Integer.parseInt(splitString[x++]);
+        this.penaltisEncajados = Integer.parseInt(splitString[x++]);
+    }
 
     @Override
     public void mostrar() {

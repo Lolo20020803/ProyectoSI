@@ -18,6 +18,13 @@ public class Defensa extends Jugador{
         this.intercepciones = intercepciones;
         this.faltas = faltas;
     }
+    public Defensa(String[] splitString){
+        super(splitString);
+        int x = 7;
+        this.regates_Rec = Integer.parseInt(splitString[x++]);;
+        this.intercepciones = Integer.parseInt(splitString[x++]);;
+        this.faltas = Integer.parseInt(splitString[x++]);;
+    }
 
     @Override
     public void mostrar() {

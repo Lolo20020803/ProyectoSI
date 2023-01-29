@@ -11,13 +11,31 @@ public class Liga {
     public Liga(){
         equipos = new ArrayList<Equipo>();
         ArrayList<Partido> partidos = new ArrayList<Partido>();
-        Equipo equipo1 = new Equipo("Equipo 1", "D:\\ProgramoCosas\\ProyectoSI\\ficheros\\prueba.csv");
-        Equipo equipo2 = new Equipo( "Equipo 2","D:\\ProgramoCosas\\ProyectoSI\\ficheros\\prueba2.csv");
-        numEquipos = 2;
-        partidos.add(new Partido(equipo1,equipo2));
-        partidos.add(new Partido(equipo2,equipo1));
-        equipo1.crearPartidos(partidos);
-
+        Equipo equipo1 = new Equipo("Barcelona", "D:\\ProgramoCosas\\ProyectoSI\\ficheros\\Barcelona.csv");
+        Equipo equipo2 = new Equipo( "Getafe","D:\\ProgramoCosas\\ProyectoSI\\ficheros\\Getafe.csv");
+        Equipo equipo3 = new Equipo( "Atletico De Madrid","D:\\ProgramoCosas\\ProyectoSI\\ficheros\\Atletico_de_Madrid.csv");
+        Equipo equipo4 = new Equipo( "Real Madrid","D:\\ProgramoCosas\\ProyectoSI\\ficheros\\Real_Madrid.csv");
+        Equipo equipo5 = new Equipo( "Real Sociedad","D:\\ProgramoCosas\\ProyectoSI\\ficheros\\Real_Sociedad.csv");
+        equipos.add(equipo1);
+        equipos.add(equipo2);
+        equipos.add(equipo3);
+        equipos.add(equipo4);
+        equipos.add(equipo5);
+        numEquipos = 5;
+        equipo1.crearPartidos(crearPartidos(equipo1));
+        equipo2.crearPartidos(crearPartidos(equipo2));
+        equipo3.crearPartidos(crearPartidos(equipo3));
+        equipo4.crearPartidos(crearPartidos(equipo4));
+        equipo5.crearPartidos(crearPartidos(equipo5));
+    }
+    public ArrayList<Partido> crearPartidos(Equipo equipo){
+        ArrayList<Partido> resultado = new ArrayList<Partido>();
+        for(Equipo prov : equipos){
+            if(!prov.equals(equipo)){
+                resultado.add(new Partido(equipo,prov));
+            }
+        }
+        return resultado;
     }
     public void evolucionar(){
         int generacion = 0;
@@ -43,7 +61,7 @@ public class Liga {
             for(int x =0;x<equipos.size()-1;x++){
                 Equipo equipo1 = equipos.get(x);
                 Equipo equipo2 = equipos.get(x+1);
-                if(r.nextFloat(1)<=prob){
+                if(r.nextFloat()<=prob){
                     equipo1.invertir(equipo2);
                     System.out.println("Invierte");
                 }
@@ -54,27 +72,28 @@ public class Liga {
                 equipo1.simular();
                 mostrarResultados();
                 generacion++;
+                puntosA0();
             }
+        }
+    }
+    public void puntosA0(){
+        for(Equipo equipo:equipos){
+            equipo.puntos =0;
         }
     }
     public void mostrarResultados(){
         for(Equipo equipo : equipos){
             System.out.println(equipo.nombre + " Puntos: " + equipo.puntos);
         }
-        //System.out.println("El ganador de la liga es: " + equipos.get(mayor()).nombre);
+        ganador();
     }
-    public int mayor(){
-        int res =0;
+    public void ganador(){
+        Equipo ganador = equipos.get(0);
         for (Equipo equipo: equipos) {
-            if(equipo.puntos >res){
-                res = equipo.puntos;
+            if(equipo.puntos > ganador.puntos){
+                ganador = equipo;
             }
         }
-        for (Equipo equipo : equipos){
-            if(equipo.puntos == res){
-                return equipo.plantilla.indexOf(equipo);
-            }
-        }
-        return res;
+        System.out.println("El ganador de la liga es: " + ganador.nombre);
     }
 }

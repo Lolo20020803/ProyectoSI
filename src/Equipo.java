@@ -9,7 +9,6 @@ import java.util.List;
 public class Equipo {
     String nombre;
     List<Jugador> plantilla;
-    Entrenador entrenador;
     double notaMedia;
     int puntos;
     ArrayList<Partido> partidos;
@@ -22,11 +21,10 @@ public class Equipo {
             String[] fila = null;
             while ((fila = csvReader.readNext()) != null){
                 switch (fila[0]){
-                     case "Portero": Portero provisionalPort = new Portero(); plantilla.add(provisionalPort);break;
-                     case "Defensa": Defensa provisionalDef = new Defensa(); plantilla.add(provisionalDef);break;
-                     case "Mediocentro": Mediocentro provisionalMed = new Mediocentro(); plantilla.add(provisionalMed);break;
+                     case "Portero": Portero provisionalPort = new Portero(fila); plantilla.add(provisionalPort);break;
+                     case "Defensa": Defensa provisionalDef = new Defensa(fila); plantilla.add(provisionalDef);break;
+                     case "Mediocentro": Mediocentro provisionalMed = new Mediocentro(fila); plantilla.add(provisionalMed);break;
                      case "Delantero": Delantero provisionalDel = new Delantero(fila); plantilla.add(provisionalDel);break;
-                     case "Entrenador":this.entrenador = new Entrenador();break;
              }
             }
         } catch (CsvValidationException | IOException e) {

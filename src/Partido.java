@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Partido {
     Equipo local;
     Equipo visitante;
@@ -28,6 +30,7 @@ public class Partido {
     public void simular(){
         double jugadoresLocal =0;
         double jugadoresVisitantes =0;
+        Random r = new Random();
         for(Jugador jugador : local.plantilla){
             jugadoresLocal += jugador.calcularNotaMedia();
         }
@@ -36,38 +39,29 @@ public class Partido {
         }
         jugadoresLocal /= local.plantilla.size();
         jugadoresVisitantes /= visitante.plantilla.size();
-        double puntuacionLocal = jugadoresLocal * 0.70 + local.notaMedia*0.3;
-        double puntuacionVisitante = jugadoresVisitantes * 0.70 + visitante.notaMedia*0.3;
-        double div = puntuacionVisitante / puntuacionLocal;
-        if(puntuacionLocal >= puntuacionVisitante){
-            if(div>1){
-                visitante.puntos +=3;
-            }else if(div == 1){
-                local.puntos +=1;
-                visitante.puntos +=1;
-            } else if (div>0.66 && div < 1 ) {
-               local.puntos +=3;
-            } else if (div>=0.33 && div <=0.66) {
-                local.puntos +=1;
-                visitante.puntos +=1;
-            } else{
+        if(jugadoresLocal > jugadoresVisitantes){
+            double div = jugadoresVisitantes / jugadoresLocal;
+            double res =r.nextDouble();
+            if(res > jugadoresLocal){
                 visitante.puntos+=3;
+            }else if(res< div && res > jugadoresVisitantes){
+                local.puntos +=3;
             }
-        } else if (puntuacionLocal > puntuacionVisitante) {
-            if(div > 1){
-                local.puntos += 3;
-            } else if (div==1) {
-                local.puntos +=1;
-                visitante.puntos +=1;
-            }else if(div>0.66 && div < 1 ){
-                visitante.puntos +=3;
-            } else if (div>=0.33 && div <=0.66) {
-                local.puntos +=1;
-                visitante.puntos +=1;
-            }else {
+            else {
+                local.puntos+=1;
+                visitante.puntos+=1;
+            }
+        }else {
+            double div = jugadoresLocal / jugadoresVisitantes;
+            int res =r.nextInt(100);
+            if(res > jugadoresVisitantes){
                 local.puntos+=3;
+            } else if (res<div && res>jugadoresLocal) {
+                visitante.puntos+=3;
+            }else{
+                local.puntos+=1;
+                visitante.puntos+=1;
             }
         }
-
     }
 }

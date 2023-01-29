@@ -27,7 +27,7 @@ public class Delantero extends Jugador{
 
     public Delantero (String[] splitString){
         super(splitString);
-        int x = 6;
+        int x = 7;
         this.golesMarcados = Integer.parseInt(splitString[x++]);
         this.penaltisTirados = Integer.parseInt(splitString[x++]);
         this.penaltisMarcados = Integer.parseInt(splitString[x++]);
